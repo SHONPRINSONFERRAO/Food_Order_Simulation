@@ -1,5 +1,20 @@
 # Food_Order_Simulation
 
+**Libraries:**
+Coroutines
+DataBinding
+Flows
+Glide
+Hilt
+Lifecycle-aware components
+LiveData
+Lottie 
+Retrofit
+Room
+ViewBinding
+ViewModels
+
+
 ![Screenshot_20221119_162739](https://user-images.githubusercontent.com/9689942/202850872-e26d41b6-7d1a-4a84-ab62-205bf9227d06.png)
 
 ![Screenshot_20221119_162800](https://user-images.githubusercontent.com/9689942/202850877-ce846bbd-10de-4bc2-99b4-c64d46bccdc8.png)
