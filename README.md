@@ -1,8 +1,8 @@
 # Food_Order_Simulation
 
 **Libraries:**
-*Coroutines
-*DataBinding
+* Coroutines
+* DataBinding
 Flows
 Glide
 Hilt
