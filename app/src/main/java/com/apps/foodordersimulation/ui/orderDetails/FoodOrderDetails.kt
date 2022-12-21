@@ -62,7 +62,7 @@ class FoodOrderDetails : Fragment() {
 
             binding.orderId.text = "Order Id: ${it.id}"
             binding.orderName.text = "Order Name: ${it.itemName}"
-            binding.orderStatus.text = "Order Status: ${OrderStatusEnum.fromValue(it.orderStatus).toString()}"
+            binding.orderStatus.text = "Order Status: ${OrderStatusEnum.fromValue(it.orderStatus)}"
             binding.orderDate.text = "Order Time: ${DateUtils.getDateTime(it.date)}"
         }
     }

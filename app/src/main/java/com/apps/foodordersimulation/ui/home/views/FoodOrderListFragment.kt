@@ -12,6 +12,7 @@ import com.apps.foodordersimulation.databinding.FragmentFoodOrderListBinding
 import com.apps.foodordersimulation.ui.home.adapter.FoodOrderListAdapter
 import com.apps.foodordersimulation.ui.home.viewmodel.FoodOrdersViewModel
 import com.apps.foodordersimulation.ui.orderDetails.FoodOrderDetails
+import com.apps.foodordersimulation.utils.OrderStatusEnum
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -66,16 +67,15 @@ class FoodOrderListFragment : Fragment() {
 
         binding.foodOrdersList.apply {
             adapter = FoodOrderListAdapter({
-                if (it.orderStatus < 3) {
-                    it.orderStatus = it.orderStatus + 1
-                    lifecycle.coroutineScope.launch {
-                        viewModel.updateOrderStatus(it)
-                    }
-                }
 
-                if (it.orderStatus == 3) {
+                if(it.orderStatus == OrderStatusEnum.Delivered.status) {
                     lifecycle.coroutineScope.launch {
                         viewModel.orderDelivered(it)
+                    }
+                } else {
+                    it.orderStatus = OrderStatusEnum.getNextStatus(it.orderStatus)
+                    lifecycle.coroutineScope.launch {
+                        viewModel.updateOrderStatus(it)
                     }
                 }
 
